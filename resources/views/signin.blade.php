@@ -8,11 +8,14 @@
         @csrf
         <div class="flex flex-col gap-2" >
           <label for="email">Email:</label>
-          <input class="p-2 border rounded-md " type="email" id="email" name="email" required>
+          <input class="p-2 border rounded-md " value="{{ old('email') }}"  type="email" id="email" name="email" required>
+          @error('email')
+            <span class="text-red-500 text-sm">{{ $message }}</span>
+          @enderror
         </div>
         <div class="flex flex-col gap-2" >
           <label for="password">Password:</label>
-          <input class="p-2 border rounded-md min-w-52 " type type="password" id="password" name="password" required>
+          <input class="p-2 border rounded-md min-w-52 " value="{{ old('password') }}"  type type="password" id="password" name="password" required>
         </div>
         <button class="px-5 bg-blue-500 text-white py-2 rounded-md my-2 mx-auto w-full " type="submit">Login</button>
       </form>
