@@ -15,7 +15,7 @@
         </div>
         <div class="flex flex-col gap-2" >
           <label for="password">Password:</label>
-          <input class="p-2 border rounded-md min-w-52 " value="{{ old('password') }}"  type type="password" id="password" name="password" required>
+          <input class="p-2 border rounded-md min-w-52 " value="{{ old('password') }}"  type="password" id="password" name="password" required>
         </div>
         <button class="px-5 bg-blue-500 text-white py-2 rounded-md my-2 mx-auto w-full " type="submit">Login</button>
       </form>

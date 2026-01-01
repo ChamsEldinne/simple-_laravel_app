@@ -22,14 +22,14 @@
         </div>
         <div class="flex flex-col gap-2" >
           <label for="password">Password:</label>
-          <input class="p-2 border rounded-md min-w-52 " value="{{ old('password') }}"  type type="password" id="password" name="password" required>
+          <input class="p-2 border rounded-md min-w-52 " value="{{ old('password') }}"  type="password" id="password" name="password" required>
           @error('password')
             <span class="text-red-500 text-sm">{{ $message }}</span>
           @enderror 
         </div>
         <div class="flex flex-col gap-2" >
           <label for="password_confirmation">Confirm Password:</label>
-          <input class="p-2 border rounded-md min-w-52 " value="{{ old('password_confirmation') }}"  type type="password" id="password_confirmation" name="password_confirmation" required>
+          <input class="p-2 border rounded-md min-w-52 " value="{{ old('password_confirmation') }}" type="password" id="password_confirmation" name="password_confirmation" required>
            @error('password_confirmation')
             <span class="text-red-500 text-sm">{{ $message }}</span>
           @enderror
