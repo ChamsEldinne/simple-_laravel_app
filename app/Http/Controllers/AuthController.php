@@ -16,11 +16,15 @@ class AuthController extends Controller
         ]);
 
         $user = User::where('email', $request->email)->first();
-
+        
         if (!$user || !password_verify($request->password, $user->password)) {
             return back()->withErrors(['email' => 'Invalid credentials'])->withInput();
         } 
 
+        if($user->status !== 'active'){
+            return back()->withErrors(['email' => 'Your account is inactive. Please contact admin.'])->withInput();
+        }
+        
         auth()->login($user);
 
         return redirect()->route('dashboard');
