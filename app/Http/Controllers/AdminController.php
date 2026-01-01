@@ -12,11 +12,6 @@ class AdminController extends Controller
         return view('admin.dashboard', compact('users'));
     }
 
-    // public function getAllUsers()
-    // {
-        
-    // }
-
     public function changeUserStatus(User $user)
     {
 
@@ -29,12 +24,7 @@ class AdminController extends Controller
 
     public function destroy(User $user)
     {
-        if ($user->role === 'admin') {
-            abort(403);
-        }
-
         $user->delete();
-
         return back()->with('success', 'User deleted.');
     }
 }
